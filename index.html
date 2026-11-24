@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <title>ليلة حنة عبدالله & منار</title>
+  <meta name="description" content="يسعدنا حضوركم ليلة حنة عبدالله ومنار" />
+  <meta name="theme-color" content="#f6ebe4" />
+
+  <!-- معاينة اللينك في واتساب (لو غيرت الدومين غيّر اللينكات دي) -->
+  <meta property="og:url" content="https://abdllahosama.github.io/henna-card/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ليلة حنة عبدالله & منار 🌿" />
+  <meta property="og:description" content="يسعدنا حضورك ومشاركتنا الفرحة 🤍" />
+  <meta property="og:image" content="https://abdllahosama.github.io/henna-card/images/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Aref+Ruqaa:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="images/hero.jpg" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/henna.css" />
+</head>
+<body class="locked henna">
+
+  <!-- ================= الظرف ================= -->
+  <section class="gate" id="gate" aria-label="الدعوة">
+    <div class="gate-inner">
+      <p class="gate-to"><span class="gate-to-label">دعوة خاصة إلى</span><span class="gate-to-name" id="gateName">أحبابنا الغاليين</span></p>
+
+      <div class="envelope" id="envelope">
+        <div class="env-back"></div>
+        <div class="env-letter">
+          <div class="letter-inner">
+            <span class="letter-kicker">ليلة الحنة</span>
+            <span class="letter-names"><span data-bind="groom"></span> <em>&</em> <span data-bind="bride"></span></span>
+            <span class="letter-date" data-bind="dateText"></span>
+          </div>
+        </div>
+        <div class="env-pocket"></div>
+        <div class="env-flap"></div>
+        <button class="seal" id="seal" type="button" aria-label="افتح الدعوة">
+          <span class="seal-mono"><span id="mono1">ع</span><i></i><span id="mono2">م</span></span>
+        </button>
+      </div>
+
+      <p class="gate-hint">اضغط على الختم لفتح الدعوة</p>
+    </div>
+  </section>
+
+  <button class="music" id="musicBtn" type="button" aria-label="تشغيل/إيقاف الموسيقى" hidden>
+    <span class="bars"><i></i><i></i><i></i><i></i></span>
+  </button>
+  <audio id="music" loop preload="none"></audio>
+
+  <main id="site">
+
+    <!-- ================= الهيرو ================= -->
+    <header class="hero">
+      <div class="hero-media"><img src="images/hero.jpg" alt="عبدالله ومنار" /></div>
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <p class="basmala reveal">ليلة الحنة</p>
+        <h1 class="names reveal"><span data-bind="groom"></span> <span class="amp">&</span> <span data-bind="bride"></span></h1>
+        <p class="hero-greet reveal" id="heroGreet">يسعدنا حضوركم ومشاركتنا الفرحة</p>
+        <p class="hero-date reveal"><span data-bind="dateText"></span></p>
+      </div>
+      <a href="#invite" class="scroll-cue" aria-label="انزل لتحت"><span></span></a>
+    </header>
+
+    <!-- ================= نص الدعوة + العد التنازلي ================= -->
+    <section class="invite" id="invite">
+      <div class="invite-card reveal">
+        <div class="leaf" aria-hidden="true">
+          <svg viewBox="0 0 120 40"><g fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M60 34 C60 22 60 12 60 4"/><path d="M60 26 C50 24 42 18 38 8 C48 10 56 16 60 26Z"/><path d="M60 26 C70 24 78 18 82 8 C72 10 64 16 60 26Z"/><path d="M60 16 C54 14 50 10 48 4 C54 5 58 9 60 16Z"/><path d="M60 16 C66 14 70 10 72 4 C66 5 62 9 60 16Z"/><circle cx="24" cy="22" r="2.5"/><circle cx="96" cy="22" r="2.5"/><path d="M2 22h16M102 22h16"/></g></svg>
+        </div>
+        <p class="invite-line">بكل الحب ندعوكم لحضور</p>
+        <p class="invite-line">ليلة الحنة</p>
+        <p class="invite-names"><span data-bind="groom"></span> <em>&</em> <span data-bind="bride"></span></p>
+        <div class="divider" aria-hidden="true"><span></span><i></i><span></span></div>
+
+        <div class="countdown" id="countdown" aria-live="polite">
+          <div><b data-cd="d">٠</b><small>يوم</small></div>
+          <div><b data-cd="h">٠</b><small>ساعة</small></div>
+          <div><b data-cd="m">٠</b><small>دقيقة</small></div>
+          <div><b data-cd="s">٠</b><small>ثانية</small></div>
+        </div>
+        <p class="countdown-done" id="countdownDone" hidden>النهارده الحنة 🌿</p>
+      </div>
+    </section>
+
+    <!-- ================= التفاصيل ================= -->
+    <section class="details">
+      <div class="detail reveal">
+        <div class="detail-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg>
+        </div>
+        <h3>الموعد</h3>
+        <p class="detail-main" data-bind="dateText"></p>
+        <p class="detail-sub" data-bind="timeText"></p>
+        <div class="btn-row">
+          <a class="btn" id="gcalBtn" target="_blank" rel="noopener">Google Calendar</a>
+          <button class="btn ghost" id="icsBtn" type="button">Apple / Outlook</button>
+        </div>
+      </div>
+
+      <div class="detail reveal">
+        <div class="detail-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        </div>
+        <h3>المكان</h3>
+        <p class="detail-main" data-bind="venueName"></p>
+        <p class="detail-sub" data-bind="venueAddress"></p>
+        <div class="btn-row" id="mapsRow">
+          <a class="btn" id="mapsBtn" target="_blank" rel="noopener">افتح اللوكيشن</a>
+        </div>
+      </div>
+    </section>
+    <div class="map-wrap reveal" id="mapWrap" hidden><iframe id="mapFrame" title="خريطة المكان" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+
+    <!-- ================= التهاني ================= -->
+    <section class="wishes" id="wishes" hidden>
+      <div class="sec-head reveal">
+        <span class="chapter-num">دفتر التهاني</span>
+        <h2>كلمة حلوة للعروسين</h2>
+        <p class="wishes-note">التهاني هنا هي نفسها اللي في دعوة الفرح</p>
+      </div>
+
+      <form class="wish-form reveal" id="wishForm" novalidate>
+        <input type="text" name="name" id="wishName" maxlength="60" placeholder="اسمك" autocomplete="name" />
+        <textarea name="message" id="wishMsg" maxlength="400" rows="3" placeholder="اكتب تهنئتك…"></textarea>
+        <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <div class="wish-actions">
+          <small id="wishCount">٠ / ٤٠٠</small>
+          <button class="btn" type="submit" id="wishSubmit">انشر التهنئة</button>
+        </div>
+        <p class="form-error" id="wishError" hidden></p>
+      </form>
+
+      <div class="wish-list" id="wishList" aria-live="polite"></div>
+      <button type="button" class="btn ghost wish-more" id="wishMore" hidden>اعرض أكتر</button>
+    </section>
+
+    <!-- ================= الختام ================= -->
+    <section class="finale">
+      <div class="finale-content reveal">
+        <div class="divider" aria-hidden="true"><span></span><i></i><span></span></div>
+        <p>مستنيينكم ليلة الحنة تفرحوا معانا</p>
+        <h2><span data-bind="groom"></span> <em>&</em> <span data-bind="bride"></span></h2>
+        <span class="finale-date" data-bind="dateText"></span>
+        <div class="wedding-note">
+          <span class="wn-kicker">وبعدها بأسبوع الفرح 🤍</span>
+          <b data-bind="weddingDateText"></b>
+          <span><span data-bind="weddingTimeText"></span> · <span data-bind="weddingVenue"></span></span>
+        </div>
+      </div>
+      <p class="foot">اللهم بارك لهما وبارك عليهما واجمع بينهما في خير</p>
+    </section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/henna.js"></script>
+</body>
+</html>
